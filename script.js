@@ -95,6 +95,24 @@ document.addEventListener('DOMContentLoaded', function() {
         this.innerHTML = '<img src="images/justice-profile.jpg" class="profile-pic" style="border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.1)">';
       }
     });
+
+    // Profile functionality
+    const profileEditBtn = document.createElement('button');
+    profileEditBtn.textContent = 'Edit Profile';
+    profileEditBtn.className = 'profile-edit-btn';
+    
+    const profileSection = document.querySelector('#profile .profile-card');
+    if (profileSection) {
+        profileSection.appendChild(profileEditBtn);
+        
+        profileEditBtn.addEventListener('click', function() {
+            alert('Profile edit functionality will be added here');
+            // In a real implementation:
+            // 1. Show edit form
+            // 2. Allow updating profile info
+            // 3. Save changes
+        });
+    }
 });
 
 console.log('Justice\'s Business Website - Ready for Business!');
