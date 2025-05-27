@@ -64,8 +64,10 @@ document.addEventListener('DOMContentLoaded', function() {
       this.classList.toggle('expanded');
       
       if (this.classList.contains('expanded')) {
-        this.style.width = isMobile ? '150px' : '200px';
-        this.style.borderRadius = '20px';
+        const size = isMobile ? '150px' : '200px';
+        this.style.width = size;
+        this.style.height = size;
+        this.style.borderRadius = '50%';
         this.innerHTML = `
           <div class="profile-expanded">
             <img src="images/justice-profile.jpg" class="profile-pic">
@@ -77,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
       } else {
         this.style.width = '';
+        this.style.height = '';
         this.style.borderRadius = '';
         this.innerHTML = '<img src="images/justice-profile.jpg" class="profile-pic">';
       }
