@@ -63,21 +63,38 @@
         }
         
         /* Profile Icon in Navigation */
-        .nav-profile-icon {
-            width: 30px;
-            height: 30px;
-            vertical-align: middle;
-            margin-right: 10px;
-        }
-        
         .profile-icon {
             margin-right: auto;
+            position: relative;
+        }
+        
+        .nav-profile-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid #007bff;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-profile-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
         }
         
         @media (max-width: 768px) {
             .nav-profile-icon {
-                width: 25px;
-                height: 25px;
+                width: 40px;
+                height: 40px;
+                border-width: 2px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-profile-icon {
+                width: 35px;
+                height: 35px;
             }
         }
     </style>
@@ -92,7 +109,7 @@
             <ul>
                 <li class="profile-icon">
                     <a href="#profile">
-                        <img src="images/justice-logo.svg" alt="Profile" class="nav-profile-icon">
+                        <img src="images/profile-picture.png" alt="Justice - Business Owner" class="nav-profile-icon">
                     </a>
                 </li>
                 <li><a href="#about">About</a></li>
