@@ -65,23 +65,34 @@ document.addEventListener('DOMContentLoaded', function() {
       
       if (this.classList.contains('expanded')) {
         const size = isMobile ? '150px' : '200px';
+        this.style.transition = 'all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55)';
         this.style.width = size;
         this.style.height = size;
         this.style.borderRadius = '50%';
+        this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.2)';
+        this.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
         this.innerHTML = `
           <div class="profile-expanded">
-            <img src="images/justice-profile.jpg" class="profile-pic">
+            <img src="images/justice-profile.jpg" class="profile-pic" style="border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.1)">
             <div class="profile-info">
-              <div class="profile-name">Justice</div>
-              <div class="profile-title">Founder & CEO</div>
+              <div class="profile-name" style="color: white; font-weight: bold; font-size: 1.2em">Justice</div>
+              <div class="profile-title" style="color: rgba(255,255,255,0.8)">Founder & CEO</div>
+              <div class="profile-social" style="margin-top: 10px">
+                <a href="#" style="color: white; margin: 0 5px"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: white; margin: 0 5px"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="color: white; margin: 0 5px"><i class="fab fa-linkedin"></i></a>
+              </div>
             </div>
           </div>
         `;
       } else {
+        this.style.transition = 'all 0.5s ease-in-out';
         this.style.width = '';
         this.style.height = '';
         this.style.borderRadius = '';
-        this.innerHTML = '<img src="images/justice-profile.jpg" class="profile-pic">';
+        this.style.boxShadow = '';
+        this.style.background = '';
+        this.innerHTML = '<img src="images/justice-profile.jpg" class="profile-pic" style="border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.1)">';
       }
     });
 });
