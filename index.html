@@ -154,17 +154,79 @@
                 font-size: 1.8rem;
             }
         }
+        
+        /* Combined Profile Header */
+        .profile-name-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 0;
+            background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid #007bff;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+        
+        .profile-main-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #212529;
+            margin: 0.5rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-avatar {
+                width: 80px;
+                height: 80px;
+            }
+            .profile-main-name {
+                font-size: 1.7rem;
+            }
+        }
+        
+        /* Top Contact Header */
+        .contact-header {
+            background: #007bff;
+            color: white;
+            padding: 0.8rem 1rem;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .contact-header span {
+            margin: 0 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-header {
+                font-size: 1rem;
+                padding: 0.6rem 0.5rem;
+            }
+            .contact-header span {
+                display: block;
+                margin: 0.3rem 0;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="top-profile">
-        <img src="images/profile picture.png" alt="Justice" class="top-profile-pic">
-        <h1 class="top-profile-name">Justice</h1>
-        <div class="top-profile-details">
-            <p>Business Owner</p>
-            <p>Lagos, Nigeria</p>
-            <p>09025229337</p>
-        </div>
+    <div class="contact-header">
+        <span>Justice</span>
+        <span>Lagos, Nigeria</span>
+        <span>09025229337</span>
+    </div>
+    <div class="profile-name-header">
+        <img src="images/profile picture.png" alt="Justice" class="profile-avatar">
+        <h1 class="profile-main-name">Justice</h1>
     </div>
     <header class="main-header">
         <div class="header-content">
