@@ -61,6 +61,25 @@
                 font-size: 1.5rem;
             }
         }
+        
+        /* Profile Icon in Navigation */
+        .nav-profile-icon {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        .profile-icon {
+            margin-right: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-profile-icon {
+                width: 25px;
+                height: 25px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -71,6 +90,11 @@
         </div>
         <nav>
             <ul>
+                <li class="profile-icon">
+                    <a href="#profile">
+                        <img src="images/justice-logo.svg" alt="Profile" class="nav-profile-icon">
+                    </a>
+                </li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#order">Order</a></li>
@@ -81,7 +105,6 @@
                 <li><a href="#jewelry">Jewelry</a></li>
                 <li><a href="#shoes">Shoes</a></li>
                 <li><a href="#accessories">Accessories</a></li>
-                <li><a href="#profile">Profile</a></li>
                 <li><a href="#home-goods">Home Goods</a></li>
                 <li><a href="#electronics">Electronics</a></li>
                 <li><a href="#beauty">Beauty Products</a></li>
@@ -395,7 +418,6 @@
         <section id="profile" class="section">
             <div class="card profile-card">
                 <div class="profile-header">
-                    <img src="images/justice-logo.svg" alt="Justice's Logo" class="profile-pic">
                     <h2>Justice's Profile</h2>
                 </div>
                 <div class="profile-details">
