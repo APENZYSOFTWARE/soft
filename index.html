@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justice's Business</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/justice-logo.svg" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="profile-container">
+            <div class="profile-name">JUSTICE</div>
+            <div class="profile-title">Business Owner</div>
+        </div>
+        <div class="header-content">
+            <h1 class="header-title">JUSTICE</h1>
+            <p class="header-subtitle">Business Solutions</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#clothing">Clothing</a></li>
+                <li><a href="#jewelry">Jewelry</a></li>
+                <li><a href="#shoes">Shoes</a></li>
+                <li><a href="#accessories">Accessories</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about" class="section">
+            <div class="card">
+                <h2>About Justice's Business</h2>
+                <p>Welcome to Justice's Business, where quality meets excellence. Founded and owned by Justice, we specialize in providing top-notch services to our valued customers.</p>
+                <p>Our mission is to deliver exceptional value while maintaining the highest standards of professionalism and customer satisfaction.</p>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <h2>Our Fish Products</h2>
+            <div class="services-grid">
+                <div class="card product-card">
+                    <div class="product-image-container">
+                        <img src="images/fresh-catfish.jpg" alt="Fresh Catfish" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fresh Catfish</h3>
+                        <span class="price">₦3,500/kg</span>
+                    </div>
+                </div>
+                <div class="card product-card">
+                    <div class="product-image-container">
+                        <img src="images/roasted-catfish.jpg" alt="Roasted Catfish" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Roasted Catfish</h3>
+                        <span class="price">₦15,000/kg</span>
+                    </div>
+                </div>
+                <div class="card product-card">
+                    <div class="product-image-container">
+                        <img src="images/dried-fish.jpg" alt="Dried Fish" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Dried Fish</h3>
+                        <span class="price">₦4,500/kg</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="order" class="section">
+            <div class="card">
+                <h2>Place an Order</h2>
+                <form class="order-form">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                    <input type="email" class="form-control" placeholder="Your Email" required>
+                    <select class="form-control" required>
+                        <option value="" disabled selected>Select Service</option>
+                        <option value="service1">Service 1</option>
+                        <option value="service2">Service 2</option>
+                    </select>
+                    <textarea class="form-control" placeholder="Order Details" required rows="4"></textarea>
+                    <button type="submit" class="btn">Submit Order</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="careers" class="section">
+            <h2>Join Our Team</h2>
+            <div class="job-openings">
+                <div class="card">
+                    <h3>Manager</h3>
+                    <p>Looking for an experienced manager to oversee operations.</p>
+                    <button class="btn">Apply Now</button>
+                </div>
+                <div class="card">
+                    <h3>Customer Care</h3>
+                    <p>Customer service representatives needed.</p>
+                    <button class="btn">Apply Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="card">
+                <h2>Place Your Order</h2>
+                <div class="contact-methods">
+                    <div class="contact-item">
+                        <i>📞</i>
+                        <div>
+                            <h3>Order Line</h3>
+                            <a href="tel:09025229337">0902 522 9337</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i>📱</i>
+                        <div>
+                            <h3>Customer Service</h3>
+                            <a href="tel:08062240288">0806 224 0288</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="section">
+            <h2>Our Fresh Fish Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/fresh-catfish.jpg" alt="Fresh Catfish" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fresh Catfish</h3>
+                        <span class="price">₦3,500/kg</span>
+                        <button class="order-btn" data-product="fresh-catfish">Order Now</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/roasted-catfish.jpg" alt="Roasted Catfish" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Roasted Catfish</h3>
+                        <span class="price">₦15,000/kg</span>
+                        <button class="order-btn" data-product="roasted-catfish">Order Now</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/dried-fish.jpg" alt="Dried Fish" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Dried Fish</h3>
+                        <span class="price">₦4,500/kg</span>
+                        <button class="order-btn" data-product="dried-fish">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="clothing" class="section">
+            <h2>Clothing Collection</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/african-print.jpg" alt="African Print" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>African Print Dress</h3>
+                        <span class="price">₦12,000</span>
+                        <button class="order-btn" data-product="african-dress">Order Now</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/designer-shirt.jpg" alt="Designer Shirt" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Designer Shirt</h3>
+                        <span class="price">₦8,500</span>
+                        <button class="order-btn" data-product="designer-shirt">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="jewelry" class="section">
+            <h2>Jewelry Collection</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/gold-necklace.jpg" alt="Gold Necklace" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Gold Plated Necklace</h3>
+                        <span class="price">₦25,000</span>
+                        <button class="order-btn" data-product="gold-necklace">Order Now</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/beaded-bracelet.jpg" alt="Beaded Bracelet" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Beaded Bracelet</h3>
+                        <span class="price">₦7,500</span>
+                        <button class="order-btn" data-product="beaded-bracelet">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="shoes" class="section">
+            <h2 class="section-title">Footwear Collection</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/male-shoes.jpg" alt="Men's Designer Shoes" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Men's Designer Shoes</h3>
+                        <span class="price">₦15,000</span>
+                        <button class="order-btn" data-product="male-shoes">Order Now</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/female-shoes.jpg" alt="Women's Fashion Shoes" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Women's Fashion Shoes</h3>
+                        <span class="price">₦18,000</span>
+                        <button class="order-btn" data-product="female-shoes">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="accessories" class="section">
+            <h2 class="section-title">Accessories</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/female-bag.jpg" alt="Designer Handbag" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Designer Handbag</h3>
+                        <span class="price">₦22,000</span>
+                        <button class="order-btn" data-product="female-bag">Order Now</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="images/pc-case.jpg" alt="Gaming PC Case" class="product-image" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Gaming PC Case</h3>
+                        <span class="price">₦35,000</span>
+                        <button class="order-btn" data-product="pc-case">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Justice's Business. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
