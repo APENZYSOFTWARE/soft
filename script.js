@@ -60,9 +60,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Profile icon click effect
     document.querySelector('.profile-container').addEventListener('click', function() {
+      const isMobile = window.innerWidth <= 768;
       this.classList.toggle('expanded');
+      
       if (this.classList.contains('expanded')) {
-        this.style.width = '200px';
+        this.style.width = isMobile ? '150px' : '200px';
         this.style.borderRadius = '20px';
         this.innerHTML = `
           <div class="profile-expanded">

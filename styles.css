@@ -312,10 +312,42 @@ footer {
 }
 
 /* Responsive Profile */
+.profile-container {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+  width: 80px;
+}
+
+.profile-pic {
+  width: 100%;
+  height: auto;
+  max-width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.profile-expanded {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.profile-info {
+  white-space: nowrap;
+}
+
 @media (max-width: 768px) {
+  .profile-container {
+    width: 60px;
+  }
+  
   .profile-pic {
-    width: 40px;
-    height: 40px;
+    max-width: 60px;
   }
 }
 
