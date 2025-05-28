@@ -1,16 +1,66 @@
-// JavaScript functionality will be added here
+// Improved mobile-responsive JavaScript
 
-// Form submission handling
 document.addEventListener('DOMContentLoaded', function() {
-    // Order form submission
+    // Mobile menu functionality for Tailwind
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mainNav = document.getElementById('main-nav');
+    
+    if (mobileMenuButton && mainNav) {
+        mobileMenuButton.addEventListener('click', function() {
+            mainNav.classList.toggle('hidden');
+            mainNav.classList.toggle('block');
+            
+            // Animate the menu
+            if (mainNav.classList.contains('block')) {
+                mainNav.classList.add('animate-slideDown');
+                mainNav.classList.remove('animate-slideUp');
+            } else {
+                mainNav.classList.add('animate-slideUp');
+                mainNav.classList.remove('animate-slideDown');
+            }
+        });
+    }
+
+    // Close menu when clicking a link (for mobile)
+    document.querySelectorAll('#main-nav a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth < 768) {
+                mainNav.classList.add('hidden');
+                mainNav.classList.remove('block');
+            }
+        });
+    });
+
+    // Order form handling
     const orderForm = document.querySelector('.order-form');
     if (orderForm) {
         orderForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your order! Justice will contact you soon.');
+            
+            // Get form values
+            const formData = new FormData(orderForm);
+            const orderData = Object.fromEntries(formData.entries());
+            
+            // Show confirmation
+            alert(`Thank you for your order, ${orderData.name}!\n\nJustice will contact you soon at ${orderData.email}.`);
             orderForm.reset();
         });
     }
+
+    // Improved product ordering
+    document.querySelectorAll('.order-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const productName = this.parentElement.querySelector('h3').textContent;
+            const price = this.parentElement.querySelector('.price').textContent;
+            
+            // Show more detailed confirmation
+            const confirmOrder = confirm(`You're ordering: ${productName}\nPrice: ${price}\n\nProceed to confirmation?`);
+            
+            if (confirmOrder) {
+                alert(`Order confirmed for ${productName}!\n\nPlease call 09025229337 to finalize your order.`);
+            }
+        });
+    });
 
     // Job application buttons
     const applyButtons = document.querySelectorAll('.apply-btn');
@@ -29,25 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 behavior: 'smooth'
             });
         });
-    });
-
-    // Order functionality
-    const orderButtons = document.querySelectorAll('.order-btn');
-
-    orderButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const product = button.getAttribute('data-product');
-        const productName = button.parentElement.querySelector('h3').textContent;
-        const price = button.parentElement.querySelector('.price').textContent;
-        
-        // Show order confirmation
-        alert(`Order placed for ${productName} (${price})\n\nPlease call 09025229337 to confirm your order`);
-        
-        // In a real implementation, you would:
-        // 1. Open an order modal
-        // 2. Collect customer details
-        // 3. Send order to backend
-      });
     });
 
     // View details functionality
@@ -113,6 +144,14 @@ document.addEventListener('DOMContentLoaded', function() {
             // 3. Save changes
         });
     }
-});
 
-console.log('Justice\'s Business Website - Ready for Business!');
+    // Touch device optimizations
+    if ('ontouchstart' in window) {
+        document.querySelectorAll('a, button').forEach(el => {
+            el.style.minHeight = '48px';
+            el.style.minWidth = '48px';
+        });
+    }
+
+    console.log('Justice\'s Business Website - Ready for Business!');
+});
