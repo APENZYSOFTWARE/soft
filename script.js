@@ -153,5 +153,67 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Temu-style Countdown Timer
+    function updateCountdown() {
+        let hours = 2;
+        let minutes = 45;
+        let seconds = 30;
+        
+        const countdown = setInterval(() => {
+            seconds--;
+            if (seconds < 0) {
+                seconds = 59;
+                minutes--;
+            }
+            if (minutes < 0) {
+                minutes = 59;
+                hours--;
+            }
+            if (hours < 0) {
+                clearInterval(countdown);
+                document.querySelector('.deals-countdown').innerHTML = '<div class="sale-ended">SALE ENDED!</div>';
+                return;
+            }
+            
+            document.querySelector('.countdown-timer .number:nth-child(1)').textContent = hours.toString().padStart(2, '0');
+            document.querySelector('.countdown-timer .number:nth-child(3)').textContent = minutes.toString().padStart(2, '0');
+            document.querySelector('.countdown-timer .number:nth-child(5)').textContent = seconds.toString().padStart(2, '0');
+        }, 1000);
+    }
+
+    // Cart Functionality
+    let cartItems = [];
+
+    function updateCartCount() {
+        document.querySelector('.cart-count').textContent = cartItems.length;
+    }
+
+    // Add to Cart Buttons
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('order-btn')) {
+            const product = e.target.dataset.product;
+            cartItems.push(product);
+            updateCartCount();
+            
+            // Show added to cart animation
+            e.target.textContent = 'Added! ✓';
+            setTimeout(() => {
+                e.target.textContent = 'Add to Cart';
+            }, 2000);
+        }
+    });
+
+    // Category Navigation
+    document.querySelectorAll('.category-item').forEach(item => {
+        item.addEventListener('click', function() {
+            document.querySelectorAll('.category-item').forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    // Initialize
+    updateCountdown();
+    updateCartCount();
+
     console.log('Justice\'s Business Website - Ready for Business!');
 });

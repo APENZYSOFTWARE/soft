@@ -271,9 +271,124 @@
                 height: 150px;
             }
         }
+        
+        /* Discount Badge */
+        .discount-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        /* Original Price */
+        .original-price {
+            text-decoration: line-through;
+            color: #666;
+            font-size: 16px;
+        }
+        
+        /* Floating Cart Button */
+        .floating-cart {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .floating-cart .cart-count {
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        
+        /* Category Navigation */
+        .category-nav {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .category-scroll {
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        
+        .category-item {
+            display: inline-block;
+            margin-right: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #007bff;
+            cursor: pointer;
+        }
+        
+        .category-item.active {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+        }
+        
+        /* Deals Countdown */
+        .deals-countdown {
+            position: fixed;
+            top: 120px;
+            left: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .countdown-text {
+            font-size: 16px;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        
+        .countdown-timer {
+            display: flex;
+            align-items: center;
+        }
+        
+        .time-unit {
+            margin-right: 10px;
+        }
+        
+        .number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        
+        .label {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        .time-separator {
+            margin: 0 5px;
+        }
     </style>
 </head>
 <body>
+    <!-- Floating Cart Button -->
+    <div class="floating-cart">
+        <span class="cart-count">0</span>
+        <img src="images/cart-icon.svg" alt="Cart">
+    </div>
+
     <header class="main-header fixed top-0 left-0 right-0 bg-white shadow-md z-50">
         <div class="container mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center">
             <div class="flex items-center mb-4 md:mb-0">
@@ -303,6 +418,42 @@
         </div>
     </header>
 
+    <!-- Category Navigation -->
+    <nav class="category-nav">
+        <div class="category-scroll">
+            <a href="#fish" class="category-item active">Fish</a>
+            <a href="#clothing" class="category-item">Clothing</a>
+            <a href="#jewelry" class="category-item">Jewelry</a>
+            <a href="#footwear" class="category-item">Footwear</a>
+            <a href="#electronics" class="category-item">Electronics</a>
+            <a href="#home" class="category-item">Home</a>
+            <a href="#beauty" class="category-item">Beauty</a>
+            <a href="#sports" class="category-item">Sports</a>
+            <a href="#wards" class="category-item">Ward Deals</a>
+        </div>
+    </nav>
+
+    <!-- Deals Countdown -->
+    <div class="deals-countdown">
+        <div class="countdown-text">FLASH SALE ENDS IN:</div>
+        <div class="countdown-timer">
+            <span class="time-unit">
+                <span class="number">02</span>
+                <span class="label">HRS</span>
+            </span>
+            <span class="time-separator">:</span>
+            <span class="time-unit">
+                <span class="number">45</span>
+                <span class="label">MINS</span>
+            </span>
+            <span class="time-separator">:</span>
+            <span class="time-unit">
+                <span class="number">30</span>
+                <span class="label">SECS</span>
+            </span>
+        </div>
+    </div>
+
     <div class="contact-header">
         <div class="header-wrapper">
             <img src="./images/profile-picture.png" class="profile-picture">
@@ -327,6 +478,7 @@
             <div class="services-grid">
                 <div class="card product-card">
                     <div class="product-image-container">
+                        <!-- Image required: images/fresh-catfish.jpg -->
                         <img src="images/fresh-catfish.jpg" alt="Fresh Catfish" class="product-image" loading="lazy">
                     </div>
                     <div class="product-info">
@@ -336,6 +488,7 @@
                 </div>
                 <div class="card product-card">
                     <div class="product-image-container">
+                        <!-- Image required: images/roasted-catfish.jpg -->
                         <img src="images/roasted-catfish.jpg" alt="Roasted Catfish" class="product-image" loading="lazy">
                     </div>
                     <div class="product-info">
@@ -345,6 +498,7 @@
                 </div>
                 <div class="card product-card">
                     <div class="product-image-container">
+                        <!-- Image required: images/dried-fish.jpg -->
                         <img src="images/dried-fish.jpg" alt="Dried Fish" class="product-image" loading="lazy">
                     </div>
                     <div class="product-info">
@@ -415,6 +569,7 @@
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-image-container">
+                        <!-- Image required: images/fresh-catfish.jpg -->
                         <img src="images/fresh-catfish.jpg" alt="Fresh Catfish" class="product-image" loading="lazy">
                     </div>
                     <div class="product-info">
@@ -425,6 +580,7 @@
                 </div>
                 <div class="product-card">
                     <div class="product-image-container">
+                        <!-- Image required: images/roasted-catfish.jpg -->
                         <img src="images/roasted-catfish.jpg" alt="Roasted Catfish" class="product-image" loading="lazy">
                     </div>
                     <div class="product-info">
@@ -435,6 +591,7 @@
                 </div>
                 <div class="product-card">
                     <div class="product-image-container">
+                        <!-- Image required: images/dried-fish.jpg -->
                         <img src="images/dried-fish.jpg" alt="Dried Fish" class="product-image" loading="lazy">
                     </div>
                     <div class="product-info">
@@ -451,6 +608,7 @@
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-image-container">
+                        <!-- Image required: images/african-print.jpg -->
                         <img src="images/african-print.jpg" alt="African Print" class="product-image" loading="lazy">
                     </div>
                     <div class="product-info">
@@ -461,6 +619,7 @@
                 </div>
                 <div class="product-card">
                     <div class="product-image-container">
+                        <!-- Image required: images/designer-shirt.jpg -->
                         <img src="images/designer-shirt.jpg" alt="Designer Shirt" class="product-image" loading="lazy">
                     </div>
                     <div class="product-info">
@@ -477,6 +636,7 @@
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-image-container">
+                        <!-- Image required: images/gold-necklace.jpg -->
                         <img src="images/gold-necklace.jpg" alt="Gold Necklace" class="product-image" loading="lazy">
                     </div>
                     <div class="product-info">
@@ -487,6 +647,7 @@
                 </div>
                 <div class="product-card">
                     <div class="product-image-container">
+                        <!-- Image required: images/beaded-bracelet.jpg -->
                         <img src="images/beaded-bracelet.jpg" alt="Beaded Bracelet" class="product-image" loading="lazy">
                     </div>
                     <div class="product-info">
@@ -503,6 +664,7 @@
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-image-container">
+                        <!-- Image required: images/male-shoes.jpg -->
                         <img src="images/male-shoes.jpg" alt="Men's Designer Shoes" class="product-image" loading="lazy">
                     </div>
                     <div class="product-info">
@@ -514,6 +676,7 @@
                 
                 <div class="product-card">
                     <div class="product-image-container">
+                        <!-- Image required: images/female-shoes.jpg -->
                         <img src="images/female-shoes.jpg" alt="Women's Fashion Shoes" class="product-image" loading="lazy">
                     </div>
                     <div class="product-info">
@@ -530,6 +693,7 @@
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-image-container">
+                        <!-- Image required: images/female-bag.jpg -->
                         <img src="images/female-bag.jpg" alt="Designer Handbag" class="product-image" loading="lazy">
                     </div>
                     <div class="product-info">
@@ -541,6 +705,7 @@
                 
                 <div class="product-card">
                     <div class="product-image-container">
+                        <!-- Image required: images/pc-case.jpg -->
                         <img src="images/pc-case.jpg" alt="Gaming PC Case" class="product-image" loading="lazy">
                     </div>
                     <div class="product-info">
@@ -557,6 +722,7 @@
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-image-container">
+                        <!-- Image required: images/home-decor.jpg -->
                         <img src="images/home-decor.jpg" alt="Decorative Items" class="product-image">
                     </div>
                     <div class="product-info">
@@ -573,6 +739,7 @@
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-image-container">
+                        <!-- Image required: images/headphones.jpg -->
                         <img src="images/headphones.jpg" alt="Wireless Headphones" class="product-image">
                     </div>
                     <div class="product-info">
@@ -589,6 +756,7 @@
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-image-container">
+                        <!-- Image required: images/skincare-set.jpg -->
                         <img src="images/skincare-set.jpg" alt="Skincare Set" class="product-image">
                     </div>
                     <div class="product-info">
@@ -605,6 +773,7 @@
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-image-container">
+                        <!-- Image required: images/yoga-mat.jpg -->
                         <img src="images/yoga-mat.jpg" alt="Yoga Mat" class="product-image">
                     </div>
                     <div class="product-info">
@@ -630,6 +799,62 @@
                 <div class="profile-bio">
                     <h3>About Me</h3>
                     <p>Founder of Justice's Business, specializing in quality products and services. Dedicated to customer satisfaction and business excellence.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="wards" class="section">
+            <h2 class="section-title">Ward to Ward Products</h2>
+            
+            <div class="ward-section">
+                <h3>Ikeja Ward</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <!-- Image required: images/local-fish.jpg -->
+                            <img src="images/local-fish.jpg" alt="Local Fish" class="product-image">
+                            <span class="discount-badge">-30%</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Local Fish (Ikeja)</h3>
+                            <span class="price">₦2,800</span>
+                            <span class="original-price">₦4,000</span>
+                            <button class="order-btn" data-product="ikeja-fish">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <!-- Image required: images/artwork.jpg -->
+                            <img src="images/artwork.jpg" alt="Local Artwork" class="product-image">
+                            <span class="discount-badge">-50%</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Local Artwork</h3>
+                            <span class="price">₦5,000</span>
+                            <span class="original-price">₦10,000</span>
+                            <button class="order-btn" data-product="ikeja-art">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ward-section">
+                <h3>Victoria Island Ward</h3>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <!-- Image required: images/premium-fish.jpg -->
+                            <img src="images/premium-fish.jpg" alt="Premium Fish" class="product-image">
+                            <span class="discount-badge">-15%</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>Premium Fish (VI)</h3>
+                            <span class="price">₦4,500</span>
+                            <span class="original-price">₦5,300</span>
+                            <button class="order-btn" data-product="vi-fish">Add to Cart</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
