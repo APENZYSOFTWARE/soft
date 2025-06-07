@@ -1,11 +1,13 @@
 {
-  "name": "Soft App",
-  "short_name": "Soft",
-  "description": "A downloadable version of Soft website",
+  "name": "Golden Marketing Pro",
+  "short_name": "GoldMark",
+  "description": "Premium digital marketing platform with golden UI",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "background_color": "#fff9e6",
+  "theme_color": "#D4AF37",
+  "orientation": "portrait-primary",
+  "categories": ["business", "marketing", "productivity"],
   "icons": [
     {
       "src": "icon-192.png",
@@ -16,6 +18,25 @@
       "src": "icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/marketing-dashboard.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "description": "Marketing dashboard with analytics"
+    }
+  ],
+  "features": [
+    "Marketing analytics",
+    "Campaign management",
+    "Audience segmentation"
   ]
 }

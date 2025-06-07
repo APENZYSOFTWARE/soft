@@ -47,18 +47,68 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Improved product ordering
+    // Enhanced product ordering with contact form
     document.querySelectorAll('.order-btn').forEach(button => {
         button.addEventListener('click', function() {
-            const productName = this.parentElement.querySelector('h3').textContent;
-            const price = this.parentElement.querySelector('.price').textContent;
+            const productCard = this.closest('.product-card');
+            const productName = productCard.querySelector('h3').textContent;
+            const price = productCard.querySelector('.price').textContent;
             
-            // Show more detailed confirmation
-            const confirmOrder = confirm(`You're ordering: ${productName}\nPrice: ${price}\n\nProceed to confirmation?`);
+            // Create order form modal
+            const orderModal = document.createElement('div');
+            orderModal.className = 'order-modal';
+            orderModal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h3>Order ${productName}</h3>
+                    <p>Price: ${price}</p>
+                    <form id="orderForm">
+                        <input type="hidden" name="product" value="${productName}">
+                        <input type="hidden" name="price" value="${price}">
+                        <div class="form-group">
+                            <label>Your Name*</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number*</label>
+                            <input type="tel" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Delivery Address</label>
+                            <textarea name="address"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit Order</button>
+                    </form>
+                </div>
+            `;
             
-            if (confirmOrder) {
-                alert(`Order confirmed for ${productName}!\n\nPlease call 09025229337 to finalize your order.`);
-            }
+            document.body.appendChild(orderModal);
+            
+            // Close modal
+            orderModal.querySelector('.close-modal').addEventListener('click', () => {
+                orderModal.remove();
+            });
+            
+            // Form submission
+            orderModal.querySelector('#orderForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                const orderDetails = Object.fromEntries(formData.entries());
+                
+                // Format WhatsApp message
+                const message = `New Order:\n\n` +
+                               `Product: ${orderDetails.product}\n` +
+                               `Price: ${orderDetails.price}\n` +
+                               `Customer: ${orderDetails.name}\n` +
+                               `Phone: ${orderDetails.phone}\n` +
+                               `Address: ${orderDetails.address || 'Not specified'}`;
+                
+                // Open WhatsApp with order details
+                window.open(`https://wa.me/2349025229337?text=${encodeURIComponent(message)}`, '_blank');
+                
+                orderModal.remove();
+                alert('Order submitted successfully! Please check WhatsApp to confirm with Justice.');
+            });
         });
     });
 
