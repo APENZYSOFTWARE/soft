@@ -203,34 +203,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Temu-style Countdown Timer
-    function updateCountdown() {
-        let hours = 2;
-        let minutes = 45;
-        let seconds = 30;
-        
-        const countdown = setInterval(() => {
-            seconds--;
-            if (seconds < 0) {
-                seconds = 59;
-                minutes--;
-            }
-            if (minutes < 0) {
-                minutes = 59;
-                hours--;
-            }
-            if (hours < 0) {
-                clearInterval(countdown);
-                document.querySelector('.deals-countdown').innerHTML = '<div class="sale-ended">SALE ENDED!</div>';
-                return;
-            }
-            
-            document.querySelector('.countdown-timer .number:nth-child(1)').textContent = hours.toString().padStart(2, '0');
-            document.querySelector('.countdown-timer .number:nth-child(3)').textContent = minutes.toString().padStart(2, '0');
-            document.querySelector('.countdown-timer .number:nth-child(5)').textContent = seconds.toString().padStart(2, '0');
-        }, 1000);
-    }
-
     // Cart Functionality
     let cartItems = [];
 
@@ -262,7 +234,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Initialize
-    updateCountdown();
     updateCartCount();
 
     console.log('Justice\'s Business Website - Ready for Business!');
