@@ -1,14 +1,16 @@
 /* Minimalist Base Styles */
 :root {
-    --primary: #2563eb;  /* Updated blue primary */
-    --primary-light: #3b82f6; /* Updated aqua secondary */
-    --dark: #1e40af; /* Updated blue dark */
-    --light: #f8fafc;
-    --gray: #94a3b8;
-    --gold-primary: #FFD700;
-    --gold-dark: #D4AF37;
-    --gold-light: #FFECB3;
-    --font-bold: 800; /* New bold font weight */
+    --primary: #D4AF37;  /* Rich gold primary */
+    --primary-light: #FFD700; /* Brighter gold */
+    --primary-dark: #996515; /* Darker gold */
+    --secondary: #5D3FD3; /* Vibrant purple */
+    --secondary-light: #7F5AF0;
+    --dark: #1a1a1a;
+    --light: #fff9e6;
+    --gray: #a8a8a8;
+    --accent: #FF6B6B; /* Coral accent */
+    --success: #48BB78;
+    --font-bold: 800;
 }
 
 /* Mobile-first approach */
@@ -693,7 +695,7 @@ footer {
 }
 
 .order-btn:hover {
-  background: var(--dark);
+  background: var(--primary-dark);
 }
 
 .founder-badge {
