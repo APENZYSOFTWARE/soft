@@ -1,14 +1,14 @@
 /* Minimalist Base Styles */
 :root {
-    --primary: #000000;  /* Black primary */
-    --primary-light: #1a1a1a; /* Lighter black */
-    --primary-dark: #000000; /* Dark black */
-    --secondary: #2d2d2d; /* Dark gray secondary */
-    --secondary-light: #404040;
+    --primary: #007bff;  /* Blue primary */
+    --primary-light: #66b2ff; /* Lighter blue */
+    --primary-dark: #0056b3; /* Darker blue */
+    --secondary: #1a8cff; /* Light blue secondary */
+    --secondary-light: #66b2ff;
     --dark: #000000;
     --light: #ffffff;
     --gray: #666666;
-    --accent: #ff6b6b; /* Coral accent */
+    --accent: #007bff; /* Blue accent */
     --success: #48bb78;
     --font-bold: 800;
 }
